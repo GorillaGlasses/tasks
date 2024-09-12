@@ -19,7 +19,11 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    return numbers;
+    let triNumbers: number[] = [];
+    for (let i = 0; i < numbers.length; i++) {
+        triNumbers.push(numbers[i] * 3);
+    }
+    return triNumbers;
 }
 
 /**
