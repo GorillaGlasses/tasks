@@ -143,5 +143,19 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    let total: number = 0;
+    let inValues: number[] = [];
+    let firstNeg: boolean = true;
+    for (let i = 0; i < values.length; i++) {
+        inValues.push(values[i]);
+        if (firstNeg && values[i] < 0) {
+            inValues.push(total);
+            firstNeg = false;
+        }
+        total += values[i];
+    }
+    if (firstNeg) {
+        inValues.push(total);
+    }
+    return inValues;
 }
