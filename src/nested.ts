@@ -95,7 +95,11 @@ export function getNames(questions: Question[]): string[] {
  * Consumes an array of questions and returns the sum total of all their points added together.
  */
 export function sumPoints(questions: Question[]): number {
-    return 0;
+    let sum: number = 0;
+    for (let i = 0; i < questions.length; i++) {
+        sum += questions[i].points;
+    }
+    return sum;
 }
 
 /***
