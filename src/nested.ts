@@ -84,7 +84,11 @@ export function removeQuestion(questions: Question[], id: number): Question[] {
  * questions, as an array.
  */
 export function getNames(questions: Question[]): string[] {
-    return [];
+    let names: string[] = [];
+    for (let i = 0; i < questions.length; i++) {
+        names.push(questions[i].name);
+    }
+    return [...names];
 }
 
 /***
