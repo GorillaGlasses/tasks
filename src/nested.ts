@@ -158,13 +158,12 @@ export function toCSV(questions: Question[]): string {
 export function makeAnswers(questions: Question[]): Answer[] {
     let answers: Answer[] = [];
     for (let i = 0; i < questions.length; i++) {
-        let answer: Answer = {
+        answers.push({
             questionId: questions[i].id,
             text: "",
             submitted: false,
             correct: false,
-        };
-        answers.push(answer);
+        });
     }
     return answers;
 }
@@ -176,6 +175,7 @@ export function makeAnswers(questions: Question[]): Answer[] {
 export function publishAll(questions: Question[]): Question[] {
     return questions.map((question: Question) => ({
         ...question,
+        options: [...question.options],
         published: true,
     }));
 }
@@ -204,7 +204,21 @@ export function addNewQuestion(
     name: string,
     type: QuestionType,
 ): Question[] {
-    return [];
+    let newQuestions: Question[] = questions.map((question: Question) => ({
+        ...question,
+        options: [...question.options],
+    }));
+    newQuestions.push({
+        id: id,
+        name: name,
+        type: type,
+        body: "",
+        expected: "",
+        options: [],
+        points: 1,
+        published: false,
+    });
+    return newQuestions;
 }
 
 /***
