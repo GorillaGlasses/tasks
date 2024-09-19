@@ -231,7 +231,20 @@ export function renameQuestionById(
     targetId: number,
     newName: string,
 ): Question[] {
-    return [];
+    let newQuestions: Question[] = [];
+    for (let i = 0; i < questions.length; i++) {
+        if (questions[i].id != targetId) {
+            newQuestions.push(questions[i]);
+        } else {
+            newQuestions.push({ ...questions[i], name: newName });
+        }
+    }
+    return newQuestions.map(
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options],
+        }),
+    );
 }
 
 /***
