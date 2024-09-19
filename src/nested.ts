@@ -133,7 +133,21 @@ id,name,options,points,published
  * Check the unit tests for more examples!
  */
 export function toCSV(questions: Question[]): string {
-    return "";
+    let paragraph: string = "id,name,options,points,published";
+    for (let i = 0; i < questions.length; i++) {
+        paragraph +=
+            "\n" +
+            questions[i].id.toString() +
+            "," +
+            questions[i].name +
+            "," +
+            questions[i].options.length.toString() +
+            "," +
+            questions[i].points.toString() +
+            "," +
+            questions[i].published;
+    }
+    return paragraph;
 }
 
 /**
@@ -142,7 +156,17 @@ export function toCSV(questions: Question[]): string {
  * making the `text` an empty string, and using false for both `submitted` and `correct`.
  */
 export function makeAnswers(questions: Question[]): Answer[] {
-    return [];
+    let answers: Answer[] = [];
+    for (let i = 0; i < questions.length; i++) {
+        let answer: Answer = {
+            questionId: questions[i].id,
+            text: "",
+            submitted: false,
+            correct: false,
+        };
+        answers.push(answer);
+    }
+    return answers;
 }
 
 /***
