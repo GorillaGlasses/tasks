@@ -307,7 +307,28 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string,
 ): Question[] {
-    return [];
+    let newQuestions: Question[] = [];
+    for (let i = 0; i < questions.length; i++) {
+        if (questions[i].id != targetId) {
+            newQuestions.push(questions[i]);
+        } else {
+            newQuestions.push({
+                ...questions[i],
+                options: [...questions[i].options],
+            });
+            if (targetOptionIndex == -1) {
+                newQuestions[i].options.push(newOption);
+            } else {
+                newQuestions[i].options[targetOptionIndex] = newOption;
+            }
+        }
+    }
+    return newQuestions.map(
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options],
+        }),
+    );
 }
 
 /***
