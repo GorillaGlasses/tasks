@@ -236,7 +236,11 @@ export function renameQuestionById(
         if (questions[i].id != targetId) {
             newQuestions.push(questions[i]);
         } else {
-            newQuestions.push({ ...questions[i], name: newName });
+            newQuestions.push({
+                ...questions[i],
+                name: newName,
+                options: [...questions[i].options],
+            });
         }
     }
     return newQuestions.map(
@@ -259,7 +263,32 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType,
 ): Question[] {
-    return [];
+    let newQuestions: Question[] = [];
+    for (let i = 0; i < questions.length; i++) {
+        if (questions[i].id != targetId) {
+            newQuestions.push(questions[i]);
+        } else {
+            if (newQuestionType == "multiple_choice_question") {
+                newQuestions.push({
+                    ...questions[i],
+                    type: newQuestionType,
+                    options: [...questions[i].options],
+                });
+            } else {
+                newQuestions.push({
+                    ...questions[i],
+                    type: newQuestionType,
+                    options: [],
+                });
+            }
+        }
+    }
+    return newQuestions.map(
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options],
+        }),
+    );
 }
 
 /**
