@@ -225,6 +225,7 @@ What shape can you make with one line?
             expected: "Z",
             points: 1,
             published: false
+            published: false,
         });
     });
 
