@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-/*import { ChangeType } from "./components/ChangeType";*/
+import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
 /*import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
@@ -20,10 +20,10 @@ function App(): React.JSX.Element {
             {/*<hr />
             <StartAttempt></StartAttempt>
             <hr />
-            <TwoDice></TwoDice>
+            <TwoDice></TwoDice>*/}
             <hr />
             <ChangeType></ChangeType>
-            <hr />
+            {/*<hr />
             <CycleHoliday></CycleHoliday>*/}
         </div>
     );
