@@ -18,7 +18,7 @@ function ShoveBoxButton({ position, setPosition }: trackBox) {
     );
 }
 
-function MoveableBox({ position, setPosition }: trackBox): React.JSX.Element {
+function MoveableBox({ position }: trackBox): React.JSX.Element {
     return (
         <div
             data-testid="moveable-box"
