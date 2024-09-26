@@ -24,10 +24,7 @@ function ChangeColor({
     );
 }
 
-function ColorPreview({
-    setColorIndex,
-    colorIndex,
-}: trackColorIndex): React.JSX.Element {
+function ColorPreview({ colorIndex }: trackColorIndex): React.JSX.Element {
     return (
         <div
             data-testid="colored-box"

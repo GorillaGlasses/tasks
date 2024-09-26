@@ -21,6 +21,7 @@ export function ChooseTeam(): React.JSX.Element {
     }
 
     function clearTeam() {
+        setAllOptions(PEOPLE);
         setTeam([]);
     }
 
@@ -33,7 +34,9 @@ export function ChooseTeam(): React.JSX.Element {
                         <div key={option} style={{ marginBottom: "4px" }}>
                             Add{" "}
                             <Button
-                                onClick={() => chooseMember(option)}
+                                onClick={() => {
+                                    chooseMember(option);
+                                }}
                                 size="sm"
                             >
                                 {option}
