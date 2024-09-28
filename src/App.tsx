@@ -11,7 +11,7 @@ import { ColoredBox } from "./bad-components/ColoredBox";
 import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
 import { CheckAnswer } from "./form-components/CheckAnswer";
-//import { GiveAttempts } from "./form-components/GiveAttempts";
+import { GiveAttempts } from "./form-components/GiveAttempts";
 //import { EditMode } from "./form-components/EditMode";
 //import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
 //import { ChangeColor } from "./form-components/ChangeColor";
@@ -23,9 +23,9 @@ function App(): React.JSX.Element {
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <CheckAnswer expectedAnswer="42"></CheckAnswer>
-            {/*<hr></hr><hr></hr>
-            <GiveAttempts></GiveAttempts>
             <hr></hr>
+            <GiveAttempts></GiveAttempts>
+            {/*<hr></hr>
             <EditMode></EditMode>
             <hr></hr>
             <ChangeColor></ChangeColor>
