@@ -23,9 +23,8 @@ export function EditMode(): React.JSX.Element {
             <div>
                 {editMode && (
                     <Form.Group>
-                        <Form.Label /*disabled={!editMode}*/>Name:</Form.Label>
+                        <Form.Label>Name:</Form.Label>
                         <Form.Control
-                            //disabled={!editMode}
                             type="text"
                             value={name}
                             onChange={(
@@ -38,7 +37,6 @@ export function EditMode(): React.JSX.Element {
                 )}
                 {editMode && (
                     <Form.Check
-                        //disabled={!editMode}
                         type="checkbox"
                         id="is-student-check"
                         label="Is a student"
